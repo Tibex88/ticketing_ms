@@ -19,14 +19,17 @@ app.use(
   })
 );
 
+// app.get('/api/users/currentuser',async (req:Request, res:Response){
+//   res.status(200).send('hello current user')
+// });
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
-app.all('*', async (req, res) => {
-  throw new NotFoundError();
-});
+// app.all('*', async (req, res) => {
+//   throw new NotFoundError();
+// });
 
 app.use(errorHandler);
 
